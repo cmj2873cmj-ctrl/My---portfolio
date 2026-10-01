@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="조선소 현장 경험과 조선해양공학 지식을 바탕으로 안전·품질·납기를 조율하는 최명진의 생산관리 지원 포트폴리오">
+  <title>최명진 | 생산관리 지원 포트폴리오</title>
+  <style>
+    :root {
+      --navy-950: #061426;
+      --navy-900: #0a1d34;
+      --navy-800: #102c4c;
+      --blue-700: #075da8;
+      --blue-600: #0072c6;
+      --blue-500: #0087db;
+      --blue-100: #dff2ff;
+      --cyan-300: #69d5ed;
+      --white: #ffffff;
+      --slate-50: #f7f9fc;
+      --slate-100: #edf1f6;
+      --slate-200: #dce3ec;
+      --slate-500: #66758a;
+      --slate-700: #334258;
+      --slate-900: #152033;
+      --orange: #f39200;
+      --shadow-sm: 0 10px 30px rgba(6, 20, 38, .08);
+      --shadow-lg: 0 24px 70px rgba(2, 18, 37, .18);
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 30px;
+      --page: min(1180px, calc(100% - 40px));
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--slate-900);
+      background: var(--white);
+      font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", system-ui, sans-serif;
+      line-height: 1.65;
+      word-break: keep-all;
+    }
+    body.menu-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .container { width: var(--page); margin-inline: auto; }
+    .skip-link {
+      position: fixed; left: 16px; top: -80px; z-index: 1000;
+      padding: 10px 16px; color: var(--white); background: var(--navy-950);
+      border-radius: 8px;
+    }
+    .skip-link:focus { top: 16px; }
+
+    .site-header {
+      position: fixed; inset: 0 0 auto; z-index: 100;
+      border-bottom: 1px solid transparent;
+      background: rgba(255, 255, 255, .86);
+      backdrop-filter: blur(16px);
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+    .site-header.scrolled { border-color: var(--slate-200); box-shadow: 0 6px 24px rgba(6, 20, 38, .06); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: -.03em; }
+    .brand-mark {
+      position: relative; width: 34px; height: 34px; flex: 0 0 auto;
+      border: 2px solid var(--blue-600); border-radius: 50%;
+    }
+    .brand-mark::before, .brand-mark::after {
+      content: ""; position: absolute; left: 7px; right: 7px; height: 2px; background: var(--blue-600);
+    }
+    .brand-mark::before { top: 10px; transform: rotate(-20deg); }
+    .brand-mark::after { bottom: 10px; transform: rotate(20deg); }
+    .brand small { display: block; color: var(--slate-500); font-size: 11px; font-weight: 700; letter-spacing: .12em; }
+    .nav-links { display: flex; align-items: center; gap: 26px; font-size: 14px; font-weight: 700; }
+    .nav-links a { position: relative; color: var(--slate-700); }
+    .nav-links a::after {
+      content: ""; position: absolute; left: 0; right: 100%; bottom: -8px; height: 2px;
+      background: var(--blue-600); transition: right .2s ease;
+    }
+    .nav-links a:hover::after, .nav-links a:focus-visible::after { right: 0; }
+    .nav-safety {
+      padding: 9px 15px; border: 1px solid var(--blue-600); border-radius: 999px;
+      color: var(--blue-700) !important; background: var(--blue-100);
+    }
+    .nav-safety::after { display: none; }
+    .nav-contact { padding: 10px 16px; color: var(--white) !important; background: var(--navy-900); border-radius: 999px; }
+    .nav-contact::after { display: none; }
+    .menu-button { display: none; border: 0; background: transparent; color: var(--navy-900); cursor: pointer; }
+
+    .hero {
+      position: relative; min-height: 760px; padding: 166px 0 100px; overflow: hidden;
+      color: var(--white); background: var(--navy-950);
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px) 0 0 / 64px 64px,
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px) 0 0 / 64px 64px,
+        radial-gradient(circle at 78% 34%, rgba(0, 135, 219, .28), transparent 32%);
+    }
+    .hero::after {
+      content: ""; position: absolute; width: 560px; height: 560px; right: -180px; bottom: -300px;
+      border: 1px solid rgba(105, 213, 237, .25); border-radius: 50%; box-shadow: 0 0 0 90px rgba(105,213,237,.03), 0 0 0 180px rgba(105,213,237,.025);
+    }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.25fr .75fr; gap: 72px; align-items: center; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 22px; color: var(--cyan-300); font-size: 13px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 32px; height: 2px; background: currentColor; }
+    .hero h1 { margin: 0; max-width: 760px; font-size: clamp(42px, 6vw, 78px); line-height: 1.12; letter-spacing: -.055em; }
+    .hero h1 em { color: var(--cyan-300); font-style: normal; }
+    .hero-copy { max-width: 680px; margin: 28px 0 0; color: rgba(255,255,255,.73); font-size: clamp(17px, 2vw, 20px); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      min-height: 50px; padding: 0 22px; border: 1px solid transparent; border-radius: 999px;
+      font-size: 14px; font-weight: 800; transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: var(--navy-950); background: var(--cyan-300); }
+    .button-secondary { color: var(--white); border-color: rgba(255,255,255,.35); background: rgba(255,255,255,.05); }
+    .button-safety { color: var(--cyan-300); border-color: rgba(105,213,237,.62); background: rgba(105,213,237,.08); }
+    .button-safety:hover { border-color: var(--cyan-300); background: rgba(105,213,237,.16); }
+    .button.disabled { opacity: .55; cursor: not-allowed; }
+    .button.disabled:hover { transform: none; }
+    .hero-panel {
+      position: relative; padding: 32px; border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius-lg);
+      background: rgba(255,255,255,.075); box-shadow: var(--shadow-lg); backdrop-filter: blur(14px);
+    }
+    .hero-panel-label { margin: 0 0 24px; color: rgba(255,255,255,.55); font-size: 12px; font-weight: 800; letter-spacing: .15em; }
+    .signal-list { display: grid; gap: 6px; }
+    .signal {
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+      padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .signal:last-child { border: 0; }
+    .signal span { color: rgba(255,255,255,.58); font-size: 13px; }
+    .signal strong { text-align: right; font-size: 16px; }
+    .hero-note { margin: 22px 0 0; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.1); color: var(--cyan-300); font-size: 13px; font-weight: 700; }
+
+    .section { padding: 112px 0; }
+    .section-muted { background: var(--slate-50); }
+    .section-dark { color: var(--white); background: var(--navy-950); }
+    .section-heading { display: grid; grid-template-columns: .7fr 1.3fr; gap: 64px; margin-bottom: 58px; align-items: end; }
+    .section-kicker { margin: 0 0 12px; color: var(--blue-600); font-size: 12px; font-weight: 900; letter-spacing: .15em; text-transform: uppercase; }
+    .section-dark .section-kicker { color: var(--cyan-300); }
+    .section-heading h2 { margin: 0; font-size: clamp(32px, 4vw, 48px); line-height: 1.2; letter-spacing: -.045em; }
+    .section-heading > p { margin: 0; color: var(--slate-500); font-size: 17px; }
+    .section-dark .section-heading > p { color: rgba(255,255,255,.63); }
+
+    .company-shell {
+      display: grid; grid-template-columns: .82fr 1.18fr; gap: 24px; align-items: stretch;
+    }
+    .company-profile, .financial-panel {
+      border: 1px solid var(--slate-200); border-radius: var(--radius-lg); background: var(--white); box-shadow: var(--shadow-sm);
+    }
+    .company-profile { padding: clamp(30px, 5vw, 48px); }
+    .company-label { margin: 0 0 22px; color: var(--blue-600); font-size: 12px; font-weight: 900; letter-spacing: .14em; }
+    .company-toggle {
+      width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      padding: 0 0 18px; border: 0; border-bottom: 1px solid var(--slate-200); color: var(--navy-900);
+      background: transparent; text-align: left; cursor: pointer;
+    }
+    .company-toggle span:first-child { font-size: clamp(30px, 4vw, 46px); font-weight: 850; letter-spacing: -.045em; }
+    .company-toggle-icon {
+      width: 42px; height: 42px; flex: 0 0 auto; display: grid; place-items: center;
+      border-radius: 50%; color: var(--white); background: var(--blue-600); transition: transform .2s ease;
+    }
+    .company-toggle[aria-expanded="true"] .company-toggle-icon { transform: rotate(45deg); }
+    .company-hint { margin: 16px 0 0; color: var(--slate-500); font-size: 14px; }
+    .company-description { padding-top: 24px; }
+    .company-description p { margin: 0 0 18px; color: var(--slate-700); }
+    .company-description a { color: var(--blue-700); font-size: 14px; font-weight: 800; }
+    .company-description a:hover, .company-description a:focus-visible { text-decoration: underline; }
+    .financial-panel { padding: clamp(28px, 4vw, 42px); }
+    .financial-panel-head { display: flex; justify-content: space-between; gap: 20px; align-items: end; margin-bottom: 24px; }
+    .financial-panel-head h3 { margin: 0; font-size: 24px; letter-spacing: -.03em; }
+    .financial-panel-head span { color: var(--slate-500); font-size: 12px; }
+    .financial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .financial-card { min-width: 0; padding: 24px 20px; border-radius: var(--radius-md); background: var(--slate-50); }
+    .financial-card span { display: block; color: var(--slate-500); font-size: 13px; font-weight: 750; }
+    .financial-card strong { display: block; margin: 12px 0 6px; color: var(--navy-900); font-size: clamp(24px, 2.5vw, 34px); line-height: 1.15; letter-spacing: -.04em; }
+    .financial-card small { display: block; color: var(--slate-500); font-size: 11px; overflow-wrap: anywhere; }
+    .financial-note { margin: 20px 0 0; color: var(--slate-500); font-size: 12px; }
+    .financial-note a { color: var(--blue-700); font-weight: 800; }
+
+    .belief-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 24px; }
+    .quote-card { padding: clamp(30px, 5vw, 58px); border-radius: var(--radius-lg); background: var(--navy-900); color: var(--white); }
+    .quote-card blockquote { margin: 0; font-size: clamp(23px, 3vw, 34px); font-weight: 750; line-height: 1.5; letter-spacing: -.035em; }
+    .quote-card blockquote strong { color: var(--cyan-300); }
+    .definition-card { padding: 36px; border: 1px solid var(--slate-200); border-radius: var(--radius-lg); background: var(--white); box-shadow: var(--shadow-sm); }
+    .card-index { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 28px; color: var(--blue-600); font-size: 12px; font-weight: 900; letter-spacing: .12em; }
+    .card-index::after { content: ""; width: 30px; height: 1px; background: currentColor; }
+    .definition-card h3 { margin: 0 0 14px; font-size: 24px; letter-spacing: -.03em; }
+    .definition-card p { margin: 0; color: var(--slate-500); }
+
+    .field-layout { display: grid; grid-template-columns: .78fr 1.22fr; gap: 60px; align-items: start; }
+    .field-visual { position: sticky; top: 108px; min-height: 520px; padding: 36px; overflow: hidden; border-radius: var(--radius-lg); background: var(--navy-900); color: var(--white); }
+    .field-visual::before {
+      content: ""; position: absolute; inset: 42% -15% -20% 12%; opacity: .7;
+      background: repeating-linear-gradient(115deg, transparent 0 40px, rgba(105,213,237,.16) 41px 43px), repeating-linear-gradient(0deg, transparent 0 50px, rgba(255,255,255,.09) 51px 53px);
+      transform: skewX(-8deg);
+    }
+    .visual-number { position: relative; margin: 0; color: var(--cyan-300); font-size: 14px; font-weight: 900; letter-spacing: .14em; }
+    .field-visual h3 { position: relative; max-width: 360px; margin: 130px 0 0; font-size: clamp(34px, 4vw, 50px); line-height: 1.18; letter-spacing: -.045em; }
+    .field-visual small { position: absolute; left: 36px; bottom: 34px; color: rgba(255,255,255,.52); }
+    .media-placeholder {
+      min-height: 170px; margin: 24px 0; display: grid; place-items: center; align-content: center; gap: 5px;
+      border: 1px dashed var(--slate-200); border-radius: var(--radius-sm); color: var(--slate-500); background: var(--slate-50);
+    }
+    .media-placeholder strong { color: var(--slate-700); font-size: 13px; letter-spacing: .06em; }
+    .media-placeholder small { font-size: 12px; }
+    .field-content h2 { margin: 0 0 22px; font-size: clamp(32px, 4vw, 50px); line-height: 1.2; letter-spacing: -.045em; }
+    .field-lead { margin: 0 0 36px; color: var(--slate-500); font-size: 18px; }
+    .action-list { display: grid; gap: 14px; }
+    .action-item { display: grid; grid-template-columns: 46px 1fr; gap: 18px; padding: 22px 0; border-top: 1px solid var(--slate-200); }
+    .action-item:last-child { border-bottom: 1px solid var(--slate-200); }
+    .action-icon { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 14px; color: var(--blue-700); background: var(--blue-100); font-weight: 900; }
+    .action-item h3 { margin: 0 0 6px; font-size: 18px; }
+    .action-item p { margin: 0; color: var(--slate-500); font-size: 15px; }
+    .insight { margin-top: 32px; padding: 24px 28px; border-left: 4px solid var(--blue-600); background: var(--slate-50); font-weight: 700; }
+
+    .project-stack { display: grid; gap: 28px; }
+    .project-card {
+      display: grid; grid-template-columns: .9fr 1.1fr; overflow: hidden;
+      border: 1px solid var(--slate-200); border-radius: var(--radius-lg); background: var(--white); box-shadow: var(--shadow-sm);
+    }
+    .project-side { position: relative; min-height: 520px; padding: 38px; overflow: hidden; color: var(--white); background: var(--navy-900); }
+    .project-side.blue { background: linear-gradient(145deg, #00599f, #06315a); }
+    .project-side::after {
+      content: ""; position: absolute; width: 310px; height: 310px; right: -120px; bottom: -100px;
+      border: 55px solid rgba(255,255,255,.07); border-radius: 50%;
+    }
+    .project-tag { display: inline-flex; padding: 7px 11px; border: 1px solid rgba(255,255,255,.25); border-radius: 999px; font-size: 11px; font-weight: 800; letter-spacing: .09em; }
+    .project-side h3 { position: relative; z-index: 1; margin: 84px 0 0; font-size: clamp(30px, 4vw, 46px); line-height: 1.18; letter-spacing: -.04em; }
+    .project-result { position: absolute; z-index: 1; left: 38px; bottom: 36px; }
+    .project-result strong { display: block; color: var(--cyan-300); font-size: 42px; line-height: 1; }
+    .project-result span { color: rgba(255,255,255,.58); font-size: 13px; }
+    .project-body { padding: clamp(30px, 5vw, 54px); }
+    .project-summary { margin: 0 0 30px; color: var(--slate-500); font-size: 17px; }
+    .story { display: grid; gap: 0; }
+    .story-row { display: grid; grid-template-columns: 72px 1fr; gap: 20px; padding: 19px 0; border-top: 1px solid var(--slate-200); }
+    .story-row dt { color: var(--blue-600); font-size: 12px; font-weight: 900; letter-spacing: .08em; }
+    .story-row dd { margin: 0; color: var(--slate-700); }
+    .job-link { margin-top: 24px; padding: 20px; border-radius: var(--radius-sm); background: var(--blue-100); color: var(--navy-800); font-weight: 750; }
+
+    .competency-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .competency-card { min-height: 210px; padding: 26px; border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius-md); background: rgba(255,255,255,.055); }
+    .competency-card span { color: var(--cyan-300); font-size: 12px; font-weight: 900; }
+    .competency-card h3 { margin: 34px 0 9px; font-size: 20px; }
+    .competency-card p { margin: 0; color: rgba(255,255,255,.58); font-size: 14px; }
+
+    .compact-projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+    .compact-card { padding: 36px; border: 1px solid var(--slate-200); border-radius: var(--radius-md); background: var(--white); }
+    .compact-card h3 { margin: 12px 0 16px; font-size: 25px; letter-spacing: -.03em; }
+    .compact-card p { margin: 0; color: var(--slate-500); }
+    .compact-card .job-link { margin-bottom: 0; }
+
+    .credential-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 60px; }
+    .credential-intro h2 { margin: 0 0 18px; font-size: clamp(34px, 4vw, 48px); line-height: 1.2; letter-spacing: -.04em; }
+    .credential-intro p { color: var(--slate-500); }
+    .credential-list { border-top: 2px solid var(--navy-900); }
+    .credential-item { display: grid; grid-template-columns: 92px 1fr; gap: 24px; padding: 26px 0; border-bottom: 1px solid var(--slate-200); }
+    .credential-item span { color: var(--blue-600); font-size: 12px; font-weight: 900; letter-spacing: .08em; }
+    .credential-item h3 { margin: 0 0 6px; font-size: 20px; }
+    .credential-item p { margin: 0; color: var(--slate-500); font-size: 14px; }
+
+    .roadmap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; counter-reset: roadmap; }
+    .roadmap-card { position: relative; min-height: 300px; padding: 32px; border-radius: var(--radius-md); background: var(--white); box-shadow: var(--shadow-sm); counter-increment: roadmap; }
+    .roadmap-card::before { content: "0" counter(roadmap); color: var(--blue-600); font-size: 12px; font-weight: 900; letter-spacing: .12em; }
+    .roadmap-card h3 { margin: 76px 0 14px; font-size: 23px; }
+    .roadmap-card p { margin: 0; color: var(--slate-500); }
+    .roadmap-card:not(:last-child)::after { content: "→"; position: absolute; z-index: 2; right: -26px; top: 50%; width: 34px; height: 34px; display: grid; place-items: center; color: var(--blue-600); background: var(--white); border: 1px solid var(--slate-200); border-radius: 50%; }
+
+    .contact { padding: 110px 0 42px; color: var(--white); background: var(--navy-950); }
+    .contact-main { display: grid; grid-template-columns: 1.2fr .8fr; gap: 70px; align-items: end; padding-bottom: 80px; }
+    .contact h2 { margin: 0; max-width: 760px; font-size: clamp(38px, 5vw, 64px); line-height: 1.16; letter-spacing: -.05em; }
+    .contact h2 em { color: var(--cyan-300); font-style: normal; }
+    .contact-panel { padding: 28px; border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius-md); background: rgba(255,255,255,.05); }
+    .contact-panel p { margin: 0 0 18px; color: rgba(255,255,255,.55); font-size: 13px; }
+    .placeholder { display: block; padding: 14px 0; border-top: 1px solid rgba(255,255,255,.1); color: rgba(255,255,255,.8); font-weight: 700; }
+    .footer { display: flex; justify-content: space-between; gap: 20px; padding-top: 26px; border-top: 1px solid rgba(255,255,255,.1); color: rgba(255,255,255,.45); font-size: 12px; }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 980px) {
+      .menu-button { display: block; }
+      .nav-links {
+        position: fixed; inset: 76px 0 auto; display: none; padding: 24px 20px 34px;
+        flex-direction: column; align-items: stretch; background: var(--white); border-bottom: 1px solid var(--slate-200);
+      }
+      .nav-links.open { display: flex; }
+      .nav-safety, .nav-contact { text-align: center; }
+      .hero { min-height: auto; }
+      .hero-grid, .belief-grid, .company-shell, .field-layout, .credential-layout, .contact-main { grid-template-columns: 1fr; }
+      .hero-panel { max-width: 620px; }
+      .section-heading { grid-template-columns: 1fr; gap: 20px; }
+      .field-visual { position: relative; top: auto; min-height: 400px; }
+      .project-card { grid-template-columns: 1fr; }
+      .project-side { min-height: 390px; }
+      .competency-grid { grid-template-columns: repeat(2, 1fr); }
+      .roadmap-card:not(:last-child)::after { display: none; }
+    }
+
+    @media (max-width: 680px) {
+      :root { --page: min(100% - 28px, 1180px); }
+      .nav { min-height: 68px; }
+      .nav-links { top: 68px; }
+      .brand { font-size: 14px; }
+      .brand small { font-size: 9px; }
+      .hero { padding: 130px 0 76px; }
+      .hero-grid { gap: 40px; }
+      .hero h1 { font-size: 43px; }
+      .hero-actions, .hero-actions .button { width: 100%; }
+      .section { padding: 82px 0; }
+      .section-heading { margin-bottom: 38px; }
+      .quote-card, .definition-card, .company-profile, .financial-panel, .field-visual, .project-body, .compact-card { padding: 26px; }
+      .financial-grid { grid-template-columns: 1fr; }
+      .financial-card { padding: 20px; }
+      .project-side { min-height: 340px; padding: 26px; }
+      .project-side h3 { margin-top: 60px; }
+      .project-result { left: 26px; bottom: 26px; }
+      .story-row { grid-template-columns: 60px 1fr; gap: 12px; }
+      .competency-grid, .compact-projects, .roadmap { grid-template-columns: 1fr; }
+      .competency-card { min-height: auto; }
+      .credential-item { grid-template-columns: 1fr; gap: 8px; }
+      .roadmap-card { min-height: 240px; }
+      .roadmap-card h3 { margin-top: 46px; }
+      .footer { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 바로가기</a>
+
+  <header class="site-header" id="header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="포트폴리오 첫 화면으로 이동">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>최명진 포트폴리오<small>SHIPBUILDING · PRODUCTION</small></span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="메뉴 열기">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="nav-links" id="nav-links" aria-label="주요 메뉴">
+        <a href="#company">회사·재무</a>
+        <a href="#field">현장 경험</a>
+        <a href="#projects">핵심 프로젝트</a>
+        <a href="#competency">직무 역량</a>
+        <a href="#growth">성장 방향</a>
+        <a class="nav-safety" href="chatbot.html">안전규정</a>
+        <a class="nav-contact" href="#contact">연락처</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">최명진 · HD현대중공업 생산관리 지원</p>
+          <h1>현장을 이해하고,<br><em>생산의 흐름</em>을 지키는 사람</h1>
+          <p class="hero-copy">울산대학교 조선해양공학부에서 선박을 공부하고 조선소 작업 현장을 직접 경험했습니다. 안전을 기반으로 사람과 공정을 연결하는 생산관리자로 성장하겠습니다.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#field">핵심 경험 보기 <span aria-hidden="true">↓</span></a>
+            <span class="button button-secondary disabled" title="이력서 파일을 받은 뒤 연결할 예정입니다">이력서 준비 중</span>
+            <a class="button button-safety" href="chatbot.html">안전규정 보기 <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <aside class="hero-panel" aria-label="핵심 이력 요약">
+          <p class="hero-panel-label">CAREER SIGNALS</p>
+          <div class="signal-list">
+            <div class="signal"><span>현장</span><strong>조선소 약 1개월 반</strong></div>
+            <div class="signal"><span>교육</span><strong>Future Builder 400시간</strong></div>
+            <div class="signal"><span>성과</span><strong>자율운항보트 2위</strong></div>
+            <div class="signal"><span>생산</span><strong>ERP 생산 1급</strong></div>
+            <div class="signal"><span>안전</span><strong>산업안전기사</strong></div>
+          </div>
+          <p class="hero-note">현장 이해 × 공정 조율 × 문제 해결</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="company">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><p class="section-kicker">Company & financials</p><h2>지원 기업을<br>숫자로 이해합니다.</h2></div>
+          <p>HD현대중공업의 2025년 사업보고서를 기준으로 연결재무제표의 매출액·영업이익과 연말 수주잔고를 정리했습니다.</p>
+        </div>
+        <div class="company-shell">
+          <article class="company-profile reveal">
+            <p class="company-label">TARGET COMPANY</p>
+            <button class="company-toggle" type="button" aria-expanded="false" aria-controls="company-description">
+              <span id="company-name">HD현대중공업</span>
+              <span class="company-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <p class="company-hint">회사명을 클릭하면 기업 설명을 볼 수 있습니다.</p>
+            <div class="company-description" id="company-description" hidden>
+              <p>HD현대중공업은 울산을 기반으로 선박 건조, 해양에너지, 엔진기계 사업을 수행하는 종합중공업 기업입니다. 대형 선박 생산 역량을 바탕으로 스마트 조선소와 친환경 해양 모빌리티 기술을 확대하고 있습니다.</p>
+              <a href="https://hd-hhi.com/kr/company/overview/company-overview" target="_blank" rel="noopener noreferrer">공식 회사 소개 보기 <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="financial-panel reveal" aria-labelledby="financial-title">
+            <div class="financial-panel-head">
+              <h3 id="financial-title">2025 재무 하이라이트</h3>
+              <span>연결 기준 · 단위: 원</span>
+            </div>
+            <div class="financial-grid" id="financial-grid">
+              <div class="financial-card" data-metric="revenue">
+                <span>매출액</span><strong>17.58조원</strong><small>17,580,633,257,000원</small>
+              </div>
+              <div class="financial-card" data-metric="operating_income">
+                <span>영업이익</span><strong>2.04조원</strong><small>2,037,510,103,000원</small>
+              </div>
+              <div class="financial-card" data-metric="order_backlog">
+                <span>수주잔고</span><strong>56.38조원</strong><small>56,384,472,000,000원</small>
+              </div>
+            </div>
+            <p class="financial-note">OpenDART 사업보고서(2025.12) 기준 · 수주잔고는 2025년 12월 31일 기준 · <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859" target="_blank" rel="noopener noreferrer">공시 원문 보기</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="why">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><p class="section-kicker">Why production management</p><h2>생산관리를<br>선택한 이유</h2></div>
+          <p>현장에서 확인한 것은 작업 지시 이상의 역할이었습니다. 관리자의 판단과 소통은 작업자의 안전, 작업 속도, 다음 공정의 일정까지 연결하고 있었습니다.</p>
+        </div>
+        <div class="belief-grid">
+          <article class="quote-card reveal">
+            <span class="card-index">MY STANDARD</span>
+            <blockquote>“안전은 생산성과 반대되는 조건이 아니라, 사고와 중단을 막아 <strong>생산의 흐름을 유지하는 기반</strong>입니다.”</blockquote>
+          </article>
+          <article class="definition-card reveal">
+            <span class="card-index">DEFINITION</span>
+            <h3>내가 생각하는 생산관리</h3>
+            <p>안전과 품질을 전제로 인원·자재·공정을 조율해 전체 생산 흐름을 안정적으로 이어가는 일입니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="field">
+      <div class="container field-layout">
+        <div class="field-visual reveal" aria-label="조선소 현장 경험을 상징하는 그래픽">
+          <p class="visual-number">FIELD EXPERIENCE · 01</p>
+          <h3>작업자의 시선으로 경험한 조선소 현장</h3>
+          <small>약 1개월 반 · 발판 설치·해체 작업</small>
+        </div>
+        <div class="field-content reveal">
+          <p class="section-kicker">Differentiating experience</p>
+          <h2>현장을 알아야<br>실행 가능한 계획을 세웁니다.</h2>
+          <p class="field-lead">약 1개월 반 동안 조선소에서 발판 설치와 해체 작업을 수행하며 다양한 연령대의 작업자들과 협업했습니다. 현장을 관리하는 판단 하나가 작업 안전과 흐름에 미치는 영향을 직접 배웠습니다.</p>
+          <div class="action-list">
+            <article class="action-item"><span class="action-icon">01</span><div><h3>매일 위험요소 점검</h3><p>작업 전 위험요소와 안전구역을 확인하며 작업 중단 가능성을 줄였습니다.</p></div></article>
+            <article class="action-item"><span class="action-icon">02</span><div><h3>손상 발판 발견 및 교체</h3><p>손상된 발판을 그대로 사용하지 않고 교체해 안전한 작업 조건을 지켰습니다.</p></div></article>
+            <article class="action-item"><span class="action-icon">03</span><div><h3>다양한 작업자와 소통</h3><p>여러 연령대의 작업자들과 작업 상황과 위험요소를 공유하며 협업했습니다.</p></div></article>
+            <article class="action-item"><span class="action-icon">04</span><div><h3>안전사고 없이 작업</h3><p>속도만 앞세우지 않고 안전 절차를 지키며 맡은 작업을 수행했습니다.</p></div></article>
+          </div>
+          <!-- 현장 사진을 받은 뒤 아래 영역의 내용을 img 요소로 교체합니다. -->
+          <div class="media-placeholder" aria-label="조선소 현장 사진 추가 예정">
+            <strong>FIELD PHOTO</strong><small>공개 가능한 현장 사진 추가 예정</small>
+          </div>
+          <p class="insight">입사 후에도 일방적으로 지시하기보다 작업자의 의견을 듣고, 현장에서 실제로 실행할 수 있는 생산계획을 세우겠습니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="projects">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><p class="section-kicker">Featured projects</p><h2>문제를 조율해<br>결과로 연결했습니다.</h2></div>
+          <p>두 대표 경험을 통해 제한된 시간과 자원 속에서 우선순위를 정하고, 사람과 기술을 연결해 일정을 지킨 과정을 보여드립니다.</p>
+        </div>
+        <div class="project-stack">
+          <article class="project-card reveal">
+            <div class="project-side">
+              <span class="project-tag">2025.03 — 2025.06 · TEAM LEADERSHIP</span>
+              <h3>갈등을 역할 재설계로 전환해 일정을 완수하다</h3>
+              <div class="project-result"><strong>2위</strong><span>자율운항보트 경진대회</span></div>
+            </div>
+            <div class="project-body">
+              <p class="project-summary">2025년 3월부터 6월까지 대회를 준비했습니다. 대회 직전 방수 문제와 코딩 오류가 동시에 발생하자 팀장으로서 문제를 병렬로 처리할 수 있도록 인원을 재배치하고 매일 진척을 확인했습니다.</p>
+              <!-- 프로젝트 사진을 받은 뒤 아래 영역의 내용을 img 요소로 교체합니다. -->
+              <div class="media-placeholder" aria-label="자율운항보트 프로젝트 사진 추가 예정">
+                <strong>PROJECT PHOTO</strong><small>보트 제작·대회 사진 추가 예정</small>
+              </div>
+              <dl class="story">
+                <div class="story-row"><dt>상황</dt><dd>방수 문제와 코딩 오류가 겹치며 팀 내 우선순위 갈등 발생</dd></div>
+                <div class="story-row"><dt>판단</dt><dd>남은 일정을 고려할 때 두 문제를 병행 처리해야 한다고 판단</dd></div>
+                <div class="story-row"><dt>행동</dt><dd>강점에 따라 코딩과 보트 수리·배터리 교체 인원을 2인 1조로 재편하고 매일 중간 점검 진행</dd></div>
+                <div class="story-row"><dt>결과</dt><dd>제한된 시간 안에 보트를 완성해 대회 2위 수상, 팀의 신뢰와 협력 회복</dd></div>
+              </dl>
+              <p class="job-link">생산관리 연결점 — 복수의 문제가 동시에 발생했을 때 가용 인원과 일정을 고려해 업무를 병렬화한 경험</p>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-side blue">
+              <span class="project-tag">2026.07.20 — 2026.10.22 · 400 HOURS</span>
+              <h3>조선 생산의 과정과 미래 기술을 함께 배우다</h3>
+              <div class="project-result"><strong>400h</strong><span>HD현대중공업 Future Builder</span></div>
+            </div>
+            <div class="project-body">
+              <p class="project-summary">2026년 7월 20일부터 10월 22일까지 진행되는 과정에서 조선해양·전기전자·AI·비즈니스 교육을 통해 선박 생산의 흐름과 제조현장에서 기술과 데이터를 활용하는 방법을 학습하고 있습니다.</p>
+              <!-- 교육 사진을 받은 뒤 아래 영역의 내용을 img 요소로 교체합니다. -->
+              <div class="media-placeholder" aria-label="Future Builder 활동 사진 추가 예정">
+                <strong>PROGRAM PHOTO</strong><small>교육·현장 활동 사진 추가 예정</small>
+              </div>
+              <dl class="story">
+                <div class="story-row"><dt>공정</dt><dd>선박 건조공정 학습과 야드·시운전 현장 경험</dd></div>
+                <div class="story-row"><dt>기술</dt><dd>전기추진 시스템을 통해 미래 선박 기술 학습</dd></div>
+                <div class="story-row"><dt>AI</dt><dd>용접 결함 이미지 분류 실습을 통한 데이터 활용 경험</dd></div>
+                <div class="story-row"><dt>관점</dt><dd>한 공정의 지연과 품질 문제가 후속 작업에 미치는 연결성 이해</dd></div>
+              </dl>
+              <p class="job-link">생산관리 연결점 — 공정·품질 데이터를 활용해 지연과 결함 가능성을 조기에 파악하는 의사결정 보조</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="competency">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><p class="section-kicker">Evidence-based competency</p><h2>경험으로 증명하는<br>생산관리 역량</h2></div>
+          <p>자의적인 점수나 별점 대신, 각 역량을 실제 경험과 자격으로 연결했습니다.</p>
+        </div>
+        <div class="competency-grid">
+          <article class="competency-card reveal"><span>01 · FIELD</span><h3>현장 이해</h3><p>조선소 발판 설치·해체 작업 경험</p></article>
+          <article class="competency-card reveal"><span>02 · SAFETY</span><h3>안전관리</h3><p>산업안전기사 및 현장 위험요소 점검</p></article>
+          <article class="competency-card reveal"><span>03 · SCHEDULE</span><h3>공정·일정관리</h3><p>자율운항보트 4개월 일정 수행</p></article>
+          <article class="competency-card reveal"><span>04 · PEOPLE</span><h3>인원 조율</h3><p>강점에 따른 2인 1조 역할 재편</p></article>
+          <article class="competency-card reveal"><span>05 · RESPONSE</span><h3>돌발 대응</h3><p>자재 부족 및 시스템 문제 해결</p></article>
+          <article class="competency-card reveal"><span>06 · RESOURCE</span><h3>자원관리</h3><p>ERP 생산 1급 취득</p></article>
+          <article class="competency-card reveal"><span>07 · INDUSTRY</span><h3>조선산업 이해</h3><p>조선해양공학 전공 및 현장 교육</p></article>
+          <article class="competency-card reveal"><span>08 · DATA</span><h3>AI 활용 학습</h3><p>용접 결함 이미지 분류 실습</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="more-projects">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><p class="section-kicker">More experience</p><h2>멈추지 않기 위해<br>대안을 찾았습니다.</h2></div>
+          <p>예기치 못한 제약 속에서도 가용 자원과 해결 방법을 찾아 작업의 흐름을 복구했습니다.</p>
+        </div>
+        <div class="compact-projects">
+          <article class="compact-card reveal">
+            <span class="card-index">기발한배 콘테스트</span>
+            <h3>자재 부족과 구조 문제 속에서 레이싱을 완주하다</h3>
+            <p>제작 중 재료가 부족하고 구조가 약해 배가 무너질 위기에서 현장의 대체 자재를 찾아 취약 부분을 보강했습니다.</p>
+            <p class="job-link">가용 자원을 확인하고 즉시 대안을 실행해 작업 중단을 최소화한 경험</p>
+          </article>
+          <article class="compact-card reveal">
+            <span class="card-index">선박설계대회</span>
+            <h3>시스템 문제를 해결해 설계 일정을 지키다</h3>
+            <p>컴퓨터 교체 후 AVEVA Marine이 실행되지 않자 교체 전 컴퓨터를 찾고 해결 방법을 조사해 IP 설정을 변경하여 실행에 성공했습니다.</p>
+            <p class="job-link">예상하지 못한 시스템 문제에서도 작업 환경을 복구하고 일정을 지킨 경험</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="credentials">
+      <div class="container credential-layout">
+        <div class="credential-intro reveal">
+          <p class="section-kicker">Education & credentials</p>
+          <h2>전공부터 현장까지,<br>직무 준비의 기록</h2>
+          <p>조선산업의 기초, 생산 자원관리, 안전관리, 미래 제조기술을 균형 있게 준비했습니다.</p>
+        </div>
+        <div class="credential-list reveal">
+          <article class="credential-item"><span>EDUCATION</span><div><h3>울산대학교 조선해양공학부 졸업</h3><p>선박과 조선산업에 대한 전공 기반</p></div></article>
+          <article class="credential-item"><span>LICENSE</span><div><h3>ERP 생산 1급</h3><p>2026.06.16 취득 · 생산계획과 자원관리의 체계적 이해</p></div></article>
+          <article class="credential-item"><span>LICENSE</span><div><h3>산업안전기사</h3><p>2026.09.11 취득 · 안전을 전제로 안정적인 생산을 운영하기 위한 기반</p></div></article>
+          <article class="credential-item"><span>PROGRAM</span><div><h3>HD현대중공업 Future Builder</h3><p>2026.07.20–2026.10.22 · 조선해양·전기전자·AI·비즈니스 400시간 과정</p></div></article>
+          <article class="credential-item"><span>AWARD</span><div><h3>자율운항보트 경진대회 2위</h3><p>2025.03–2025.06 · 팀장으로서 역할과 일정을 조율해 만든 결과</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="growth">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><p class="section-kicker">Growth roadmap</p><h2>현장에서 시작해<br>데이터로 개선하겠습니다.</h2></div>
+          <p>현장과 공정을 정확히 이해하는 것에서 출발해, 안정적인 운영을 거쳐 선제적으로 개선하는 생산관리자로 성장하겠습니다.</p>
+        </div>
+        <div class="roadmap">
+          <article class="roadmap-card reveal"><h3>현장과 공정 이해</h3><p>작업자와 소통하며 담당 공정, 설비, 자재 및 안전 기준을 정확히 익히겠습니다.</p></article>
+          <article class="roadmap-card reveal"><h3>안정적인 생산 운영</h3><p>공정 진행 상황과 문제 요인을 체계적으로 관리해 안전과 품질을 지키면서 납기를 달성하겠습니다.</p></article>
+          <article class="roadmap-card reveal"><h3>데이터 기반 개선</h3><p>현장 경험과 생산 데이터를 결합해 지연 및 품질 문제를 사전에 감지하고 개선안을 제시하겠습니다.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="contact" id="contact">
+    <div class="container">
+      <div class="contact-main">
+        <div class="reveal">
+          <p class="eyebrow">Ready for the field</p>
+          <h2>현장을 이해하는 시선과<br>끝까지 해결하는 실행력으로<br><em>생산의 흐름</em>을 만들겠습니다.</h2>
+        </div>
+        <aside class="contact-panel reveal">
+          <p>CONTACT</p>
+          <span class="placeholder">최명진</span>
+          <a class="placeholder" href="mailto:cmj2873@naver.com">cmj2873@naver.com</a>
+          <a class="placeholder" href="tel:+821038772873">010-3877-2873</a>
+        </aside>
+      </div>
+      <div class="footer">
+        <span>개인 취업 포트폴리오 · 회사 공식 웹사이트가 아닙니다.</span>
+        <span>© <span id="year"></span> Production Management Portfolio</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.querySelector('#header');
+    const menuButton = document.querySelector('.menu-button');
+    const navLinks = document.querySelector('#nav-links');
+
+    function closeMenu() {
+      navLinks.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', '메뉴 열기');
+      document.body.classList.remove('menu-open');
+    }
+
+    menuButton.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+      document.body.classList.toggle('menu-open', open);
+    });
+
+    navLinks.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 12), { passive: true });
+
+    const companyToggle = document.querySelector('.company-toggle');
+    const companyDescription = document.querySelector('#company-description');
+
+    companyToggle.addEventListener('click', () => {
+      const expanded = companyToggle.getAttribute('aria-expanded') === 'true';
+      companyToggle.setAttribute('aria-expanded', String(!expanded));
+      companyDescription.hidden = expanded;
+    });
+
+    const wonFormatter = new Intl.NumberFormat('ko-KR');
+    const trillionFormatter = new Intl.NumberFormat('ko-KR', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+
+    function updateFinancialCard(metric, amount, label) {
+      const card = document.querySelector(`[data-metric="${metric}"]`);
+      if (!card || !Number.isFinite(amount)) return;
+      card.querySelector('span').textContent = label;
+      card.querySelector('strong').textContent = `${trillionFormatter.format(amount / 1_000_000_000_000)}조원`;
+      card.querySelector('small').textContent = `${wonFormatter.format(amount)}원`;
+    }
+
+    fetch('data/financials.json')
+      .then((response) => {
+        if (!response.ok) throw new Error('재무 데이터 파일을 불러오지 못했습니다.');
+        return response.json();
+      })
+      .then((data) => {
+        document.querySelector('#company-name').textContent = data.company.name;
+        Object.entries(data.financials).forEach(([metric, item]) => {
+          updateFinancialCard(metric, Number(item.amount), item.label_ko);
+        });
+      })
+      .catch(() => {
+        // file:// 환경에서도 위에 작성된 검증 완료 기본값을 그대로 표시합니다.
+      });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
+    document.querySelector('#year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
