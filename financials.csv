@@ -1,0 +1,4 @@
+company,corp_code,fiscal_year,period_end,metric,label_ko,amount,currency,statement_basis,source_section,receipt_no
+HD현대중공업,01390344,2025,2025-12-31,revenue,매출액,17580633257000,KRW,CFS,연결 포괄손익계산서,20260320000859
+HD현대중공업,01390344,2025,2025-12-31,operating_income,영업이익,2037510103000,KRW,CFS,연결 포괄손익계산서,20260320000859
+HD현대중공업,01390344,2025,2025-12-31,order_backlog,수주잔고,56384472000000,KRW,CFS,사업보고서 수주상황,20260320000859

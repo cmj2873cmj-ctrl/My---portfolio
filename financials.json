@@ -1,0 +1,49 @@
+{
+  "company": {
+    "name": "HD현대중공업",
+    "corp_code": "01390344"
+  },
+  "report": {
+    "name": "사업보고서 (2025.12)",
+    "fiscal_year": 2025,
+    "period_end": "2025-12-31",
+    "receipt_no": "20260320000859",
+    "receipt_date": "2026-03-20",
+    "financial_statement_basis": "CFS",
+    "financial_statement_basis_ko": "연결재무제표"
+  },
+  "currency": "KRW",
+  "financials": {
+    "revenue": {
+      "label_ko": "매출액",
+      "amount": 17580633257000,
+      "source_section": "연결 포괄손익계산서",
+      "account_id": "ifrs-full_Revenue"
+    },
+    "operating_income": {
+      "label_ko": "영업이익",
+      "amount": 2037510103000,
+      "source_section": "연결 포괄손익계산서",
+      "account_id": "dart_OperatingIncomeLoss"
+    },
+    "order_backlog": {
+      "label_ko": "수주잔고",
+      "amount": 56384472000000,
+      "as_of": "2025-12-31",
+      "source_section": "사업보고서 Ⅱ. 사업의 내용 > 4. 매출 및 수주상황 > 다. 수주상황",
+      "reported_amount": 56384472,
+      "reported_unit": "KRW million"
+    }
+  },
+  "sources": {
+    "financial_statement_api": "https://opendart.fss.or.kr/api/fnlttSinglAcntAll.json",
+    "annual_report_document_api": "https://opendart.fss.or.kr/api/document.xml",
+    "dart_report_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859"
+  },
+  "retrieved_at": "2026-10-01",
+  "notes": [
+    "매출액과 영업이익은 OpenDART 단일회사 전체 재무제표 API의 2025년 연결재무제표(CFS) 당기 금액이다.",
+    "수주잔고는 표준 재무제표 계정이 아니므로 같은 사업보고서 원문 수주상황 표의 기말수주잔고 합계에서 추출했다.",
+    "수주잔고 공시 단위인 백만원에 1,000,000을 곱해 원화로 환산했다."
+  ]
+}
